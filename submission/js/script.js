@@ -48,3 +48,65 @@ chessResources.forEach(function(resource){
     resourceContainer.appendChild(card);
 
 });
+// Chess Wishlist Feature
+
+const wishlistInput = document.getElementById("wishlist-input");
+const addButton = document.getElementById("add-wishlist");
+const wishlistItems = document.getElementById("wishlist-items");
+
+
+// Add new wishlist item
+
+addButton.addEventListener("click", function(){
+
+    const itemText = wishlistInput.value;
+
+
+    if(itemText === ""){
+        alert("Please enter a chess goal.");
+        return;
+    }
+
+
+    // Create new list item
+    const listItem = document.createElement("li");
+
+    listItem.classList.add("wishlist-item");
+
+
+    // Create text
+    const text = document.createElement("span");
+
+    text.textContent = itemText;
+
+
+    // Create remove button
+    const removeButton = document.createElement("button");
+
+    removeButton.textContent = "Remove";
+
+    removeButton.classList.add("remove-btn");
+
+
+    // Remove item when clicked
+    removeButton.addEventListener("click", function(){
+
+        listItem.remove();
+
+    });
+
+
+    // Add elements together
+    listItem.appendChild(text);
+
+    listItem.appendChild(removeButton);
+
+
+    // Add item to page
+    wishlistItems.appendChild(listItem);
+
+
+    // Clear input
+    wishlistInput.value = "";
+
+});

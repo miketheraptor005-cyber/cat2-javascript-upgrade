@@ -1,0 +1,5 @@
+I have added code for tables which
+displays goals and their completion status
+it uses checkboxes for tracking progress
+I have used dynamically adding and removing elements to store data in javascript and retrieve it accordingly instead of having it in HTML
+this also makes contet easier to update
