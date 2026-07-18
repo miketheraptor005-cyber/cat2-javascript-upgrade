@@ -1,0 +1,5 @@
+I talked too my friend and he has been recently trying to beat me in chess so I made him a website for practicing chess and keeping his progress
+it tracks his progress
+gives him a platform to write his plans
+has a link to chess.com where he can play chess
+has a link to gotham chess a youtube chanel that explains everything and some recomended videos
