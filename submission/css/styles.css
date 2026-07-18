@@ -203,3 +203,7 @@ footer{
         font-size:0.95rem;
     }
 }
+#resource-list{
+    display:grid;
+    gap:1rem;
+}
