@@ -10,3 +10,12 @@ document.createElement("div") creates new HTML elements using JavaScript
 appendChild() adds the newly created element to the webpage
 template literals inserts javascript values into HTML strings
 event listener run a code when user clicks a button
+persistent state with localStorage loads saved wishlist items
+saves the updated wishlist whenever an item is added or removed
+displayWishlist(); displays saved items when the page loads
+const bannerImage = document.getElementById("banner-image");
+const bannerCaption = document.getElementById("banner-caption");
+this in javascript gets the image and the hidden caption
+addEventListener runs the function whenever the image is clicked
+bannerCaption.classList.toggle("hidden"); if the caption has the hidden class it removes it and shows the caption.
+if the caption doesn't have the hidden class it adds it back and hides the caption

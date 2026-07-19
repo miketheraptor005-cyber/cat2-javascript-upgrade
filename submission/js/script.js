@@ -165,3 +165,13 @@ notesForm.addEventListener("submit", function(event){
     notesForm.reset();
 
 });
+// Banner Click-to-Reveal
+
+const bannerImage = document.getElementById("banner-image");
+const bannerCaption = document.getElementById("banner-caption");
+
+bannerImage.addEventListener("click", function(){
+
+    bannerCaption.classList.toggle("hidden");
+
+});

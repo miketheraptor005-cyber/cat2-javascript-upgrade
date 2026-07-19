@@ -259,3 +259,27 @@ footer{
     margin-top:1rem;
     font-weight:bold;
 }
+.banner{
+    position:relative;
+    max-width:600px;
+    margin:auto;
+}
+
+.banner img{
+    width:100%;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+#banner-caption{
+    background:rgba(0,0,0,0.75);
+    color:white;
+    text-align:center;
+    padding:15px;
+    border-radius:0 0 10px 10px;
+    transition:0.3s;
+}
+
+.hidden{
+    display:none;
+}
