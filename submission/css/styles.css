@@ -254,3 +254,8 @@ footer{
 .remove-btn:hover{
     background:#8e0000;
 }
+
+#form-message{
+    margin-top:1rem;
+    font-weight:bold;
+}

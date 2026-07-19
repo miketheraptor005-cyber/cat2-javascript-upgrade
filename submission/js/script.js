@@ -110,3 +110,46 @@ addButton.addEventListener("click", function(){
     wishlistInput.value = "";
 
 });
+// Form Validation
+
+const notesForm = document.getElementById("notes-form");
+const openingInput = document.getElementById("opening");
+const ratingInput = document.getElementById("rating");
+const notesInput = document.getElementById("notes");
+const formMessage = document.getElementById("form-message");
+
+notesForm.addEventListener("submit", function(event){
+
+    // Prevent page refresh
+    event.preventDefault();
+
+    // Read input values
+    const opening = openingInput.value.trim();
+    const rating = ratingInput.value.trim();
+    const notes = notesInput.value.trim();
+
+    // Validation
+    if(opening === "" || rating === "" || notes === ""){
+
+        formMessage.textContent = "❌ Please fill in all fields before saving.";
+        formMessage.style.color = "red";
+        return;
+    }
+
+    if(rating < 100 || rating > 3500){
+
+        formMessage.textContent = "❌ Please enter a valid chess rating (100–3500).";
+        formMessage.style.color = "red";
+        return;
+    }
+
+    // Success message
+    formMessage.textContent =
+        `✅ Notes saved! Opening: ${opening}, Rating: ${rating}`;
+
+    formMessage.style.color = "green";
+
+    // Clear the form
+    notesForm.reset();
+
+});

@@ -3,3 +3,10 @@ displays goals and their completion status
 it uses checkboxes for tracking progress
 I have used dynamically adding and removing elements to store data in javascript and retrieve it accordingly instead of having it in HTML
 this also makes contet easier to update
+chess resources for each() loops through every object in the array
+and creates a card for each resouce automatically this makes the code less repetitve and easier to add more resources
+document.getElementById() selects HTML elements so JavaScript can interact with them
+document.createElement("div") creates new HTML elements using JavaScript
+appendChild() adds the newly created element to the webpage
+template literals inserts javascript values into HTML strings
+event listener run a code when user clicks a button
