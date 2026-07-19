@@ -54,62 +54,74 @@ const wishlistInput = document.getElementById("wishlist-input");
 const addButton = document.getElementById("add-wishlist");
 const wishlistItems = document.getElementById("wishlist-items");
 
+// Load wishlist from localStorage
+let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+// Display wishlist
+function displayWishlist(){
+
+    wishlistItems.innerHTML = "";
+
+    wishlist.forEach(function(item, index){
+
+        const listItem = document.createElement("li");
+        listItem.classList.add("wishlist-item");
+
+        const text = document.createElement("span");
+        text.textContent = item;
+
+        const removeButton = document.createElement("button");
+        removeButton.textContent = "Remove";
+        removeButton.classList.add("remove-btn");
+
+        removeButton.addEventListener("click", function(){
+
+            // Remove item from array
+            wishlist.splice(index, 1);
+
+            // Update localStorage
+            localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+            // Refresh the list
+            displayWishlist();
+
+        });
+
+        listItem.appendChild(text);
+        listItem.appendChild(removeButton);
+
+        wishlistItems.appendChild(listItem);
+
+    });
+
+}
 
 // Add new wishlist item
-
 addButton.addEventListener("click", function(){
 
-    const itemText = wishlistInput.value;
-
+    const itemText = wishlistInput.value.trim();
 
     if(itemText === ""){
         alert("Please enter a chess goal.");
         return;
     }
 
+    // Add to array
+    wishlist.push(itemText);
 
-    // Create new list item
-    const listItem = document.createElement("li");
+    // Save to localStorage
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
 
-    listItem.classList.add("wishlist-item");
-
-
-    // Create text
-    const text = document.createElement("span");
-
-    text.textContent = itemText;
-
-
-    // Create remove button
-    const removeButton = document.createElement("button");
-
-    removeButton.textContent = "Remove";
-
-    removeButton.classList.add("remove-btn");
-
-
-    // Remove item when clicked
-    removeButton.addEventListener("click", function(){
-
-        listItem.remove();
-
-    });
-
-
-    // Add elements together
-    listItem.appendChild(text);
-
-    listItem.appendChild(removeButton);
-
-
-    // Add item to page
-    wishlistItems.appendChild(listItem);
-
+    // Refresh list
+    displayWishlist();
 
     // Clear input
     wishlistInput.value = "";
 
 });
+
+// Show saved wishlist when page loads
+displayWishlist();
 // Form Validation
 
 const notesForm = document.getElementById("notes-form");
